@@ -1,15 +1,26 @@
-import React from "react";
+import React ,{ useState,useEffect }from "react";
 import "./layout.css";
 import 'bootstrap/dist/css/bootstrap.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faShapes, faShare } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import img1 from './img.jpeg';
+
  export function Layout(){
+  const[profile,setProfile]=useState([]);
+    useEffect(()=>{
+        fetch('http://localhost:3000/product.json') 
+        .then(data=>data.json())
+        .then(da=>setProfile(da))
+    })
+  
     return(
         <>  
      <div className="container-fluid bg-navimg">
         <nav class="navbar navbar-expand-lg navbar-light bg-light bg-trans">
-            <a class="navbar-brand" href="#">image</a>
+            {/* <a class="navbar-brand" href="#">image</a> */}
+            <img src={img1} className="img-nav"/>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -106,7 +117,26 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
   </div>
 </div>
 
-        </div>
+
+{profile.map((value,index)=>
+                <>
+            <div className="p-5 col-lg-3">
+                <div className="card justify-content-around">
+                    <img src={value.image} className="card-img-top"/>
+                    <FontAwesomeIcon icon={faBookmark} className="bookmark text-danger"/>
+                    <div className="card-body">
+                        <h5 className="card-title">{value.name}</h5>
+                        <p className="card-text">{value.position}</p>
+                        <a href="#" className="btn btn-danger">VIEW</a>
+                    </div>
+                </div>        
+            </div>
+            </>)
+            }
+</div>
+
+
+
   </>
     );
 }
