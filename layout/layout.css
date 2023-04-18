@@ -30,9 +30,21 @@
 .btn-drop{
     border: 2px solid rgb(112, 8, 116);
     color:rgb(112, 8, 116) ;
+    width:250px;
+    margin-left:20px;
 }
 .img-nav{
 width:50px;
 height:50px;
-margin:20px
+margin:20px;
+}
+.cardimg{
+    height:200px;
+}
+.btn-drop1{
+    border: 2px solid rgb(112, 8, 116);
+    color:rgb(112, 8, 116) ;
+    margin:20px ;
+}
+.bookmark{
 }

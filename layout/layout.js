@@ -10,7 +10,7 @@ import img1 from './img.jpeg';
  export function Layout(){
   const[profile,setProfile]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:3000/product.json') 
+        fetch('/product.json') 
         .then(data=>data.json())
         .then(da=>setProfile(da))
     })
@@ -52,8 +52,8 @@ import img1 from './img.jpeg';
         </div>
         <div className="container row">
 
-         <div class="dropdown m-4">
-          <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+         <div class="dropdown col-2">
+          <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
            Experience
            </button>
           <div class="dropdown-menu">
@@ -63,8 +63,8 @@ import img1 from './img.jpeg';
            </div>
         </div>
 
-        <div class="dropdown m-4">
-  <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown col-2">
+  <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
  Html/Css
   </button>
   <div class="dropdown-menu">
@@ -73,8 +73,8 @@ import img1 from './img.jpeg';
     <a class="dropdown-item" href="#">Something else here</a>
   </div>
 </div>
-<div class="dropdown m-4">
-  <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+<div class="dropdown col-2">
+  <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
    Banglore
   </button>
   <div class="dropdown-menu">
@@ -84,8 +84,8 @@ import img1 from './img.jpeg';
   </div>
 </div>
  
-<div class="dropdown m-4">
-  <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+<div class="dropdown col-2">
+  <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
     Ui/Ux Designer
   </button>
   <div class="dropdown-menu">
@@ -95,8 +95,8 @@ import img1 from './img.jpeg';
   </div>
 </div>
 
-<div class="dropdown m-4">
-  <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+<div class="dropdown col-2">
+  <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
   Gender
   </button>
   <div class="dropdown-menu">
@@ -106,11 +106,11 @@ import img1 from './img.jpeg';
   </div>
 </div>
 
-<div class="dropdown m-4">
-  <button class="btn btn-drop dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+<div class="dropdown col-2">
+  <button class="btn btn-drop1 dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
    Age
   </button>
-  <div class="dropdown-menu">
+  <div class="dropdown-menu ">
     <a class="dropdown-item" href="#">Action</a>
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else here</a>
@@ -120,14 +120,14 @@ import img1 from './img.jpeg';
 
 {profile.map((value,index)=>
                 <>
-            <div className="p-5 col-lg-3">
-                <div className="card justify-content-around">
-                    <img src={value.image} className="card-img-top"/>
-                    <FontAwesomeIcon icon={faBookmark} className="bookmark text-danger"/>
-                    <div className="card-body">
+            <div className="p-5 col-lg-3 ">
+                <div className="card justify-content-around btn-drop">
+                    <img src={value.image} className="card-img-top cardimg"/>
+                    <FontAwesomeIcon icon={faBookmark} className="bookmark"/>
+                    <div className="card-body text-center">
                         <h5 className="card-title">{value.name}</h5>
                         <p className="card-text">{value.position}</p>
-                        <a href="#" className="btn btn-danger">VIEW</a>
+                        <a href="#" className="btn btn-nav">VIEW</a>
                     </div>
                 </div>        
             </div>
